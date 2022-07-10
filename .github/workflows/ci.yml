@@ -9,11 +9,14 @@ on:
 jobs:
   cpplint:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
-      - name: Build cpplint image
-        run: docker build cpplint/ -t cpplint
+      - name: Install cpplint
+        run: | 
+          wget https://raw.githubusercontent.com/google/styleguide/gh-pages/cpplint/cpplint.py
+          cp cpplint.py /usr/bin
+          chmod +x /usr/bin/cpplint.py
+
       - name: Check code in /src
         run: docker run -v ${PWD}:/app cpplint bash -c "find src/ -name "*.cc" -o -name "*.h"  | xargs cpplint.py"
       - name: Check code in /tests
