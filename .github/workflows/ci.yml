@@ -18,9 +18,9 @@ jobs:
           sudo chmod +x /usr/bin/cpplint.py
 
       - name: Check code in /src
-        run: docker run -v ${PWD}:/app cpplint bash -c "find src/ -name "*.cc" -o -name "*.h"  | xargs cpplint.py"
+        run: find src/ -name "*.cc" -o -name "*.h"  | xargs cpplint.py
       - name: Check code in /tests
-        run: docker run -v ${PWD}:/app cpplint bash -c "find tests/ -name "*.cc" -o -name "*.h"  | xargs cpplint.py"
+        run: find tests/ -name "*.cc" -o -name "*.h"  | xargs cpplint.py
 
   build:
     runs-on: ubuntu-latest
