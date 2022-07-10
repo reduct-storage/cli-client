@@ -1,0 +1,8 @@
+[requires]
+fmt/8.1.1
+cli11/2.2.0
+gtest/1.11.0
+catch2/2.13.8
+
+[generators]
+cmake

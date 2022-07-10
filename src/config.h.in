@@ -1,0 +1,11 @@
+// Copyright 2022 Alexey Timin
+
+#ifndef REDUCT_CLI_CONFIG_H
+#define REDUCT_CLI_CONFIG_H
+
+namespace reduct::cli {
+
+static constexpr const char* kVersion = "@FULL_VERSION@";
+
+}
+#endif  // REDUCT_STORAGE_CONFIG_H
