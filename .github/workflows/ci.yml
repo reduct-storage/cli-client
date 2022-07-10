@@ -34,7 +34,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install conan
-        run: pip3 install "conan~=1.48"
+        run: pip3 install "conan==1.48"
       - name: Build
         run:  |
           mkdir build
