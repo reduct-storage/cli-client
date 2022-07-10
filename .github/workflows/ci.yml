@@ -14,8 +14,8 @@ jobs:
       - name: Install cpplint
         run: | 
           wget https://raw.githubusercontent.com/google/styleguide/gh-pages/cpplint/cpplint.py
-          cp cpplint.py /usr/bin
-          chmod +x /usr/bin/cpplint.py
+          sudo cp cpplint.py /usr/bin
+          sudo chmod +x /usr/bin/cpplint.py
 
       - name: Check code in /src
         run: docker run -v ${PWD}:/app cpplint bash -c "find src/ -name "*.cc" -o -name "*.h"  | xargs cpplint.py"
