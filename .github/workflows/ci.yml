@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install cpplint
-        run: | 
+        run: |
           wget https://raw.githubusercontent.com/google/styleguide/gh-pages/cpplint/cpplint.py
           sudo cp cpplint.py /usr/bin
           sudo chmod +x /usr/bin/cpplint.py
@@ -36,7 +36,7 @@ jobs:
       - name: Install conan
         run: pip3 install conan
       - name: Build
-        run:  |
+        run: |
           mkdir build
           cd build
           cmake -DCMAKE_BUILD_TYPE=Debug ..
@@ -55,7 +55,8 @@ jobs:
         with:
           name: package
           path: ./build
-
+      - name: Make executable
+        run: chmod +x ./build/bin/unit_tests
       - name: Run tests
         run: ./build/bin/unit_tests
 
@@ -69,6 +70,7 @@ jobs:
         with:
           name: package
           path: ./build
-
+      - name: Make executable
+        run: chmod +x ./build/bin/reduct-cli
       - name: Run tests
         run: ./build/bin/reduct-cli --help
