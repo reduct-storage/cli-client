@@ -34,7 +34,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install conan
-        run: pip3 install "conan==1.48"
+        run: pip3 install
       - name: Build
         run:  |
           mkdir build
@@ -57,7 +57,7 @@ jobs:
           path: ./build
 
       - name: Run tests
-        run: ./build/test/unit_tests
+        run: ./build/bin/unit_tests
 
 
   sanity_tests:
@@ -71,4 +71,4 @@ jobs:
           path: ./build
 
       - name: Run tests
-        run: ./build/test/reduct-cli --help
+        run: ./build/bin/reduct-cli --help

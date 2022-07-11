@@ -24,6 +24,7 @@ class App : public IApp {
 
     return 0;
   }
+
   [[nodiscard]] int Run(std::ostream& os) const override {
     if (app_.count("--version")) {
       os << fmt::format("{}", kVersion);  // Just example. There is a better way - set_version_flag

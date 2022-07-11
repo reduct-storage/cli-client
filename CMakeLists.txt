@@ -39,7 +39,6 @@ conan_basic_setup()
 include_directories(${CMAKE_SOURCE_DIR}/src)
 include_directories(${CMAKE_BINARY_DIR}/)
 
-
 add_subdirectory(src)
 
 if (REDUCT_CPP_ENABLE_TESTS)
