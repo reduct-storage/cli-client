@@ -73,4 +73,4 @@ jobs:
       - name: Make executable
         run: chmod +x ./build/bin/reduct-cli
       - name: Run tests
-        run: ./build/bin/reduct-cli --help
+        run: ./build/bin/reduct-cli --version
