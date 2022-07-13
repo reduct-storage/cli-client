@@ -42,12 +42,12 @@ include_directories(${CMAKE_BINARY_DIR}/)
 include(FetchContent)
 
 FetchContent_Declare(
-        reduct_cpp
+        reductcpp
         GIT_REPOSITORY https://github.com/reduct-storage/reduct-cpp.git
         GIT_TAG main
 )
 
-FetchContent_MakeAvailable(reduct_cpp)
+FetchContent_MakeAvailable(reductcpp)
 
 add_subdirectory(src)
 
